@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* DEFAULT THEME 1 (Dark Blue) */
+:root {
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-toggle: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+    
+    --key-bg: hsl(0, 0%, 90%);
+    --key-text: hsl(221, 14%, 31%);
+    --key-shadow: hsl(28, 16%, 65%);
+    
+    --key-function-bg: hsl(225, 21%, 49%);
+    --key-function-shadow: hsl(224, 28%, 35%);
+    
+    --key-equals-bg: hsl(6, 63%, 50%);
+    --key-equals-shadow: hsl(6, 70%, 34%);
+    
+    --text-color: hsl(0, 100%, 100%);
+}
+
+/* THEME 2 (Light) */
+[data-theme="2"] {
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-toggle: hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+    
+    --key-bg: hsl(0, 0%, 90%);
+    --key-text: hsl(60, 10%, 19%);
+    --key-shadow: hsl(35, 11%, 61%);
+    
+    --key-function-bg: hsl(185, 42%, 37%);
+    --key-function-shadow: hsl(185, 58%, 25%);
+    
+    --key-equals-bg: hsl(25, 98%, 40%);
+    --key-equals-shadow: hsl(25, 99%, 27%);
+    
+    --text-color: hsl(60, 10%, 19%);
+}
+
+/* THEME 3 (Purple) */
+[data-theme="3"] {
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-toggle: hsl(268, 71%, 12%);
+    --bg-screen: hsl(268, 71%, 12%);
+    
+    --key-bg: hsl(268, 47%, 21%);
+    --key-text: hsl(52, 100%, 62%);
+    --key-shadow: hsl(290, 70%, 36%);
+    
+    --key-function-bg: hsl(281, 89%, 26%);
+    --key-function-shadow: hsl(285, 91%, 52%);
+    
+    --key-equals-bg: hsl(176, 100%, 44%);
+    --key-equals-shadow: hsl(177, 92%, 70%);
+    
+    --text-color: hsl(52, 100%, 62%);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3 {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.6rem;
+}
+
+p {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.9rem;
+}
+
+.combine {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.btn-switch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.3rem;
+}
+
+.identifiers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem;
+    width: 55px;
+    font-size: 0.75rem;
+}
+
+.button-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-toggle);
+    border-radius: 1rem;
+    padding: 0.4rem 0.4rem;
+    width: 70px;
+    transition: background-color 0.3s ease;
+}
+
+.switch {
+    display: flex;
+    border-radius: 50px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.switch.active {
+    background-color: var(--key-equals-bg);
+}
+
+.Output {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--bg-screen);
+    width: 100%;
+    height: 90px;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.result {
+    font-family: "League Spartan", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+    background-color: var(--bg-screen);
+    padding: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--key-bg);
+    color: var(--key-text);
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 3px solid var(--key-shadow);
+    padding: 10px 5px;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.grid:active {
+    transform: translateY(2px);
+    border-bottom-width: 1px;
+}
+
+.del {
+    background-color: var(--key-function-bg);
+    border-bottom-color: var(--key-function-shadow);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.reset {
+    grid-column: 1 / span 2;
+    background-color: var(--key-function-bg);
+    border-bottom-color: var(--key-function-shadow);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.equals {
+    grid-column: 3 / span 2;
+    background-color: var(--key-equals-bg);
+    border-bottom-color: var(--key-equals-shadow);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.plus {
+    background-color: var(--key-function-bg);
+    border-bottom-color: var(--key-function-shadow);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.minus {
+    background-color: var(--key-function-bg);
+    border-bottom-color: var(--key-function-shadow);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.multiply {
+    background-color: var(--key-function-bg);
+    border-bottom-color: var(--key-function-shadow);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.divide {
+    background-color: var(--key-function-bg);
+    border-bottom-color: var(--key-function-shadow);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    main {
+        padding: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    .result {
+        font-size: 2rem;
+    }
+    
+    .grid {
+        font-size: 1.2rem;
+        padding: 8px 4px;
+    }
+}

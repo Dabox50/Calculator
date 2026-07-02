@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="calculator.css">
+  
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+  <main>
+    <div class="header">
+      <h3>calc</h3>
+      <div class="combine">
+        <p>Theme</p>
+        <div class="btn-switch">
+          <div class="identifiers">
+            <p class="btn1">1</p>
+            <p class="btn2">2</p>
+            <p class="btn3">3</p>
+          </div>
+          
+          <div class="button-switch" id="theme-selector">
+            <button class="switch active" value="1" title="Theme 1" aria-label="Select theme 1"></button>
+            <button class="switch" value="2"  title="Theme 2" aria-label="Select theme 2"></button>
+            <button class="switch" value="3" title="Theme 3" aria-label="Select theme 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="Output">
+      <p class="result">0</p>
+    </div>
+
+    <section>
+      <!-- Row 1: 7 8 9 DEL -->
+      <button class="grid seven" onclick="add('7')">7</button>
+      <button class="grid eight" onclick="add('8')">8</button>
+      <button class="grid nine" onclick="add('9')">9</button>
+      <button class="grid del" onclick="del()">DEL</button>
+      
+      <!-- Row 2: 4 5 6 x -->
+      <button class="grid four" onclick="add('4')">4</button>
+      <button class="grid five" onclick="add('5')">5</button>
+      <button class="grid six" onclick="add('6')">6</button>
+      <button class="grid multiply" onclick="add('x')">x</button>
+      
+      <!-- Row 3: 1 2 3 - -->
+      <button class="grid one" onclick="add('1')">1</button>
+      <button class="grid two" onclick="add('2')">2</button>
+      <button class="grid three" onclick="add('3')">3</button>
+      <button class="grid minus" onclick="add('-')">-</button>
+      
+      <!-- Row 4: 0 . RESET -->
+      <button class="grid zero" onclick="add('0')">0</button>
+      <button class="grid decimal" onclick="add('.')">.</button>
+      <button class="grid divide" onclick="add('/')">/</button>
+      <button class="grid plus" onclick="add('+')">+</button>
+      
+      <!-- Row 5: RESET EQUALS (span) -->
+      <button class="grid reset" onclick="resetCalc()">RESET</button>
+      <button class="grid equals" onclick="calculate()">=</button>
+    </section>
+
+  </main>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
